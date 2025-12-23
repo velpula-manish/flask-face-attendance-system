@@ -1,6 +1,14 @@
+
 # Face Recognition-Based Attendance Management System
 
 A web-based attendance management system that uses face recognition to automatically mark student attendance.
+
+## Live Demo
+
+**The project is deployed on PythonAnywhere:**
+
+https://shiva9989.pythonanywhere.com/
+
 
 ## Features
 - Secure login dashboard for teachers/admins
