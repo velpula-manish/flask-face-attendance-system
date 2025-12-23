@@ -20,6 +20,7 @@ A web-based attendance management system that uses face recognition to automatic
 1. Clone the repository.
 2. Create a virtual environment and install dependencies:
 pip install -r requirements.txt
+
 **3. Run the app:**
    python attendance_api.py
 4. Open `http://127.0.0.1:5000` in a browser.
