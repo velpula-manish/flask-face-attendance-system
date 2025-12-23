@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body { background:#e5f7ff; background-image:url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1350&q=80'); background-size:cover;}
+    .maincard { background:rgba(240,252,255,0.94); border-radius:14px; padding:30px 28px 28px 28px; max-width:940px;  margin:55px auto; box-shadow:0 0 40px #001e5022;}
+    .dash-title { text-align:center; font-size:2em; font-weight:bold; color:#15446b; margin-bottom:36px; }
+    .regbox,.attbox { background:#fff; border-radius:12px; box-shadow:0 0 20px #478ca2a1;padding:20px;}
+    .regbox {margin-right:18px;}
+    .attbox{margin-left:18px;}
+  </style>
+</head>
+<body>
+  <a href="/logout" class="btn btn-danger" style="position:fixed;top:13px;right:18px;z-index:11;font-size:1.15em;">LOGOUT</a>
+  <div class="maincard">
+    <div class="dash-title">Attendance Management Dashboard</div>
+    <div class="d-flex justify-content-between">
+      <form method="post" enctype="multipart/form-data" class="regbox flex-fill" style="max-width:46%;">
+        <h4>Register New Student</h4>
+        <input type="text" name="student_name" required class="form-control mb-3" placeholder="Student Name">
+        <input type="file" name="face_file" accept="image/*" capture="user" class="form-control mb-3" required>
+
+        <button class="btn btn-primary w-100" name="reg_submit">Register</button>
+        {% if reg_result %}
+          <div class="mt-2 text-success">{{reg_result}}</div>
+        {% endif %}
+      </form>
+      <form method="post" enctype="multipart/form-data" class="attbox flex-fill" style="max-width:46%;">
+  <h4>Mark Attendance</h4>
+  <<input type="file" name="attendance_file" accept="image/*" capture="user">
+  <button class="btn btn-success w-100" name="att_submit">Mark Attendance</button>
+  {% if att_result %}
+    <div class="mt-2 text-primary">{{att_result}}</div>
+  {% endif %}
+</form>
+
+    </div>
+    <div class="mt-4 mb-2 d-flex justify-content-center gap-4">
+      <a href="/attendance_table" class="btn btn-info btn-lg" style="font-weight:bold;">VIEW ATTENDANCE TABLE</a>
+      <a href="/download_csv" class="btn btn-warning btn-lg" style="font-weight:bold;">DOWNLOAD ATTENDANCE CSV</a>
+    </div>
+  </div>
+</body>
+</html>

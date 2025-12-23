@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    body { background: radial-gradient(circle at 60% 70%,#b6d8fd 0,#1478ed 100%); font-family:sans-serif; min-height:100vh;}
+    .centerbox { background:#fff; border-radius:10px; box-shadow:0 0 24px #1689c0a1; max-width:340px; margin:100px auto;padding:32px;}
+    .btn { background:#1689c0; color:#fff; border-radius:6px; border:none; padding:9px 28px; cursor:pointer;}
+  </style>
+</head>
+<body>
+  <div class="centerbox">
+    <h2 style="text-align:center;">Login</h2>
+    <form method="post">
+      <input type="text" name="username" placeholder="Username" required style="width:100%;padding:9px;margin-bottom:12px;"><br>
+      <input type="password" name="password" placeholder="Password" required style="width:100%;padding:9px;margin-bottom:18px;"><br>
+      <input type="submit" value="Login" class="btn" style="width:100%;">
+      {% if error %}
+        <div style="margin:15px 0; color:#d50312; font-weight:bold;">{{ error }}</div>
+      {% endif %}
+    </form>
+  </div>
+</body>
+</html>
